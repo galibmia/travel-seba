@@ -5,6 +5,8 @@ import bandarban from "../../assets/images/Sajek.png";
 import "./Home.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { FaArrowRight } from "react-icons/fa6";
+
 
 
 const Home = () => {
@@ -34,9 +36,9 @@ const Home = () => {
     return (
         <div className='flex flex-col justify-between md:flex-row items-center mt-36 max-w-screen-xl mx-5 gap-10 md:mx-auto'>
             <div className='w-1/2'>
-                <h1 className='font-bold text-8xl text-center bebas-neue-regular'>{data.name}</h1>
-                <p className='w-4/5 mt-10'>{data.description}</p>
-                <button className='bg-yellow-500 px-14 py-3 text-gray-900 rounded-sm text-center font-semibold mt-10'>Booking</button>
+                <h1 className='font-bold text-8xl bebas-neue-regular'>{data.name}</h1>
+                <p className='w-11/12 mt-8 font-sans text-lg'>{data.description}</p>
+                <Link to={`/booking/${data.id}`}><button className='btn-color px-12 py-3 text-gray-900 rounded-sm text-center font-semibold mt-8 flex items-center gap-2'><span className='text-lg'>Booking</span><FaArrowRight  className='text-2xl'/></button></Link>
             </div>
             <div className='w-1/2'>
                 <Carousel

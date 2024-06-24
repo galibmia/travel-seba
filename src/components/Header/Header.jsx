@@ -32,7 +32,7 @@ const Header = () => {
                             <ActiveLink to="/pricing" className="block py-2 px-3  rounded border-0 p-0 text-white  hover:bg-gray-700 hover:text-white hover:bg-transparent">Contact</ActiveLink>
                         </li>
                         <li>
-                            <button className='bg-yellow-500 px-6 py-3 text-gray-900 rounded-sm'>Login</button>
+                            <button className='btn-color px-6 py-3 text-gray-900 rounded-sm'>Login</button>
                         </li>
                     </ul>
                 </div>

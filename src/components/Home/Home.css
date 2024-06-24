@@ -49,3 +49,10 @@
 .react-multiple-carousel__arrow--left{
   bottom: calc(8% + 1px) !important ;
 }
+
+.btn-color{
+  background-color: #F9A51A;
+}
+.btn-color:hover{
+  background-color: #fdc15f;
+}

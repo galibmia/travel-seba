@@ -7,11 +7,15 @@ import {
 } from "react-router-dom";
 import Main from './components/layouts/Main';
 import Home from './components/Home/Home';
+import Booking from './components/Booking/Booking';
+import Search from './components/Search/Search';
+import Error from './components/Error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -25,7 +29,27 @@ const router = createBrowserRouter([
           console.log(params.id)
           return fetch(`http://localhost:5000/location/${params?params.id:'1'}`)
         }
-      }
+      },
+      {
+        path: 'booking',
+        element: <Booking></Booking>,
+        loader: () => fetch(`http://localhost:5000/location/1`)
+      },
+      {
+        path: 'booking/:id',
+        element: <Booking></Booking>,
+        loader: ({params}) => fetch(`http://localhost:5000/location/${params?params.id:'1'}`)
+      },
+      {
+        path: 'search',
+        element: <Search></Search>,
+        loader: () => fetch('http://localhost:5000/hotel')
+      },
+      {
+        path: 'search/:id',
+        element: <Search></Search>,
+        loader: ({params}) => fetch(`http://localhost:5000/hotel/${params?params.id:'1'}`)
+      },
     ]
   },
 ]);
