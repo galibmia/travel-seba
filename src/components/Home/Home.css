@@ -1,0 +1,51 @@
+.cox-bazar {
+  background-image: url('../../assets/images/cox-bazar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  @apply mx-2 border-x-4 border-y-4 rounded-2xl border-transparent  hover:border-yellow-500 
+}
+.sreemangal {
+  background-image: url('../../assets/images/Sreemongol.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  @apply mx-2 border-x-4 border-y-4 rounded-2xl border-transparent  hover:border-yellow-500 
+}
+.sundarban {
+  background-image: url('../../assets/images/sundorbon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  @apply mx-2 border-x-4 border-y-4 rounded-2xl border-transparent  hover:border-yellow-500 
+}
+.bandarban {
+  background-image: url('../../assets/images/bandarban-1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  @apply mx-2 border-x-4 border-y-4 rounded-2xl border-transparent  hover:border-yellow-500 
+}
+.sylhet {
+  background-image: url('../../assets/images/Sajek.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  @apply mx-2 border-x-4 border-y-4 rounded-2xl border-transparent  hover:border-yellow-500 
+}
+
+.test{
+  height: 291px;
+}
+
+.react-multiple-carousel__arrow{
+  position: fixed;
+}
+
+.react-multiple-carousel__arrow--right{
+  bottom: calc(8% + 2px);
+  margin-left: 100px;
+}
+.react-multiple-carousel__arrow--left{
+  bottom: calc(8% + 1px) !important ;
+}

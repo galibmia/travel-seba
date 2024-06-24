@@ -1,0 +1,13 @@
+.active{
+    color: rgb(81, 81, 255);
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+}
+
+a{
+    color: white;
+}
+a:hover{
+    color: rgb(81, 81, 255);
+}
