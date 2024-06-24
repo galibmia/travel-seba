@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from "../../assets/images/icons/travel-logo.png";
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
 
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+        .then()
+        .catch(err => {
+        console.log(err.message)
+        })
+    }
+
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -32,7 +43,7 @@ const Header = () => {
                             <ActiveLink to="/pricing" className="block py-2 px-3  rounded border-0 p-0 text-white  hover:bg-gray-700 hover:text-white hover:bg-transparent">Contact</ActiveLink>
                         </li>
                         <li>
-                            <button className='btn-color px-6 py-3 text-gray-900 rounded-sm'>Login</button>
+                            {user ? <button onClick={handleLogOut} className='btn-color px-6 py-2 text-gray-900 rounded-sm'>Log Out</button> : <Link to='/login'><button className='btn-color px-6 py-2 text-gray-900 rounded-sm'>Login</button></Link>}
                         </li>
                     </ul>
                 </div>

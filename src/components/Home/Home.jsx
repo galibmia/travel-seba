@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import sundarban from "../../assets/images/sundorbon.png";
-import bandarban from "../../assets/images/Sajek.png";
 import "./Home.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -11,8 +9,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const Home = () => {
 
-    const data = useLoaderData()
-    console.log(data);
+    const data = useLoaderData();
 
     const responsive = {
         desktop: {

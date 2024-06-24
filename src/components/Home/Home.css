@@ -52,7 +52,9 @@
 
 .btn-color{
   background-color: #F9A51A;
+  border: 2px solid #F9A51A;
 }
 .btn-color:hover{
-  background-color: #fdc15f;
+  background-color: transparent;
+  color: #F9A51A;
 }

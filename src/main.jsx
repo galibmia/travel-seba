@@ -10,6 +10,11 @@ import Home from './components/Home/Home';
 import Booking from './components/Booking/Booking';
 import Search from './components/Search/Search';
 import Error from './components/Error/Error';
+import Login from './components/Login/Login';
+import Register from './components/Register.jsx/Register';
+import Terms from './components/Terms/Terms';
+import AuthProvider from './provider/AuthProvider';
+
 
 const router = createBrowserRouter([
   {
@@ -30,9 +35,9 @@ const router = createBrowserRouter([
       {
         path: "location/:id",
         element: <Home></Home>,
-        loader: ({params}) => {
+        loader: ({ params }) => {
           console.log(params.id)
-          return fetch(`http://localhost:5000/location/${params?params.id:'1'}`)
+          return fetch(`http://localhost:5000/location/${params ? params.id : '1'}`)
         }
       },
       {
@@ -43,7 +48,7 @@ const router = createBrowserRouter([
       {
         path: 'booking/:id',
         element: <Booking></Booking>,
-        loader: ({params}) => fetch(`http://localhost:5000/location/${params?params.id:'1'}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/location/${params ? params.id : '1'}`)
       },
       {
         path: 'search',
@@ -53,7 +58,19 @@ const router = createBrowserRouter([
       {
         path: 'search/:id',
         element: <Search></Search>,
-        loader: ({params}) => fetch(`http://localhost:5000/hotel/${params?params.id:'1'}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/hotel/${params ? params.id : '1'}`)
+      },
+      {
+        path: 'login',
+        element: <Login></Login>,
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
+      },
+      {
+        path: 'terms',
+        element: <Terms></Terms>
       },
     ]
   },
@@ -61,6 +78,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
