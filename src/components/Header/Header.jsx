@@ -20,13 +20,13 @@ const Header = () => {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="font-medium flex flex-col items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <ActiveLink to="/news" className="block py-2 px-3 rounded md:border-0 md:p-0 text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">News</ActiveLink>
+                            <ActiveLink to="/" className="block py-2 px-3 rounded md:border-0 md:p-0 text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</ActiveLink>
                         </li>
                         <li>
                             <ActiveLink to="/about" className="block py-2 px-3 rounded md:border-0 md:p-0 hover:bg-gray-700 hover:text-white hover:bg-transparent">Destination</ActiveLink>
                         </li>
                         <li>
-                            <ActiveLink to="/services" className="block py-2 px-3 rounded border-0 p-0  hover:bg-gray-700 hover:text-white hover:bg-transparent">Blog</ActiveLink>
+                            <ActiveLink to="/search" className="block py-2 px-3 rounded border-0 p-0  hover:bg-gray-700 hover:text-white hover:bg-transparent">Search Hotel</ActiveLink>
                         </li>
                         <li>
                             <ActiveLink to="/pricing" className="block py-2 px-3  rounded border-0 p-0 text-white  hover:bg-gray-700 hover:text-white hover:bg-transparent">Contact</ActiveLink>
