@@ -26,40 +26,35 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch(`http://localhost:5000/location/1`)
+        loader: () => fetch(`https://travel-seba-server.vercel.app/location/1`)
       },
-      // {
-      //   path: "location",
-      //   element: <Home></Home>,
-      //   loader: () => fetch(`http://localhost:5000/location/1`)
-      // },
       {
         path: "location/:id",
         element: <Home></Home>,
         loader: ({ params }) => {
           console.log(params.id)
-          return fetch(`http://localhost:5000/location/${params ? params.id : '1'}`)
+          return fetch(`https://travel-seba-server.vercel.app/location/${params ? params.id : '1'}`)
         }
       },
       {
         path: 'booking',
         element: <PrivateRoute><Booking></Booking></PrivateRoute>,
-        loader: () => fetch(`http://localhost:5000/location/1`)
+        loader: () => fetch(`https://travel-seba-server.vercel.app/location/1`)
       },
       {
         path: 'booking/:id',
         element: <PrivateRoute><Booking></Booking></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/location/${params ? params.id : '1'}`)
+        loader: ({ params }) => fetch(`https://travel-seba-server.vercel.app/location/${params ? params.id : '1'}`)
       },
       {
         path: 'search',
         element: <PrivateRoute><Search></Search></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/hotel')
+        loader: () => fetch('https://travel-seba-server.vercel.app/hotel')
       },
       {
         path: 'search/:id',
         element: <PrivateRoute><Search></Search></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/hotel/${params ? params.id : '1'}`)
+        loader: ({ params }) => fetch(`https://travel-seba-server.vercel.app/hotel/${params ? params.id : '1'}`)
       },
       {
         path: 'login',
