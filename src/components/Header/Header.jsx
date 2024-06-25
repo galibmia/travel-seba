@@ -2,20 +2,22 @@ import React, { useContext } from 'react';
 import logo from "../../assets/images/icons/travel-logo.png";
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../provider/AuthProvider';
+import { AuthContext } from '../provider/AuthProvider';
 
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut, toastSuccess, toastError, loading } = useContext(AuthContext)
 
     const handleLogOut = () => {
         logOut()
-        .then()
-        .catch(err => {
-        console.log(err.message)
-        })
+            .then(() => {
+                toastSuccess("Log out Successfully");
+            })
+            .catch(err => {
+                toastError(err.message)
+            })
     }
-
+    console.log(loading)
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -34,7 +36,7 @@ const Header = () => {
                             <ActiveLink to="/" className="block py-2 px-3 rounded md:border-0 md:p-0 text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</ActiveLink>
                         </li>
                         <li>
-                            <ActiveLink to="/about" className="block py-2 px-3 rounded md:border-0 md:p-0 hover:bg-gray-700 hover:text-white hover:bg-transparent">Destination</ActiveLink>
+                            <ActiveLink to="/booking" className="block py-2 px-3 rounded md:border-0 md:p-0 hover:bg-gray-700 hover:text-white hover:bg-transparent">Booking</ActiveLink>
                         </li>
                         <li>
                             <ActiveLink to="/search" className="block py-2 px-3 rounded border-0 p-0  hover:bg-gray-700 hover:text-white hover:bg-transparent">Search Hotel</ActiveLink>
@@ -42,9 +44,10 @@ const Header = () => {
                         <li>
                             <ActiveLink to="/pricing" className="block py-2 px-3  rounded border-0 p-0 text-white  hover:bg-gray-700 hover:text-white hover:bg-transparent">Contact</ActiveLink>
                         </li>
-                        <li>
-                            {user ? <button onClick={handleLogOut} className='btn-color px-6 py-2 text-gray-900 rounded-sm'>Log Out</button> : <Link to='/login'><button className='btn-color px-6 py-2 text-gray-900 rounded-sm'>Login</button></Link>}
-                        </li>
+                        {
+                            user ? <li><span className='text-white me-5'>{user?.displayName}</span><button onClick={handleLogOut} className='btn-color px-6 py-2 text-gray-900 rounded-sm'>Log Out</button> </li> : <><Link to='/login'><button className='btn-color px-6 py-2 text-gray-900 rounded-sm'>Login</button></Link><Link to='/register'><button className='btn-color px-6 py-2 text-gray-900 rounded-sm'>Register</button></Link></>
+
+                        }
                     </ul>
                 </div>
             </div>

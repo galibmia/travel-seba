@@ -13,7 +13,8 @@ import Error from './components/Error/Error';
 import Login from './components/Login/Login';
 import Register from './components/Register.jsx/Register';
 import Terms from './components/Terms/Terms';
-import AuthProvider from './provider/AuthProvider';
+import AuthProvider from './components/provider/AuthProvider';
+import PrivateRoute from './components/routes/PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -42,22 +43,22 @@ const router = createBrowserRouter([
       },
       {
         path: 'booking',
-        element: <Booking></Booking>,
+        element: <PrivateRoute><Booking></Booking></PrivateRoute>,
         loader: () => fetch(`http://localhost:5000/location/1`)
       },
       {
         path: 'booking/:id',
-        element: <Booking></Booking>,
+        element: <PrivateRoute><Booking></Booking></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/location/${params ? params.id : '1'}`)
       },
       {
         path: 'search',
-        element: <Search></Search>,
+        element: <PrivateRoute><Search></Search></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/hotel')
       },
       {
         path: 'search/:id',
-        element: <Search></Search>,
+        element: <PrivateRoute><Search></Search></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/hotel/${params ? params.id : '1'}`)
       },
       {
