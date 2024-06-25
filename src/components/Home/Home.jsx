@@ -45,7 +45,7 @@ const Home = () => {
                     ssr={true} // render carousel on server-side.
                     infinite={true}
                     autoPlay={true}
-                    autoPlaySpeed={1000}
+                    autoPlaySpeed={5000}
                     keyBoardControl={true}
                     customTransition="all .5"
                     transitionDuration={200}
